@@ -16,4 +16,10 @@ can use 'wss' for secure connection like 'https'.
 The second argument accepts optional subprotocols. It can be a string or an array of strings.
 
 
+Features - 
+Group Meeting
+Recording
+Video download option
+Share screen
+Audio and video mute and unmute
 
