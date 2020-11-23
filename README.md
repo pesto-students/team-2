@@ -1,50 +1,70 @@
-# team-2
+# Getting Started with Create React App
 
-WebRTC - 
-used for peer to peer communication / browser to browser communication.
-initial communication (handshaking) and signaling is established through the server and a websocket. after that clients communicate directly.
-can achieve lower latency than web sockets.
-newer tech, not supported by all browsers.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-WebRTC still needs servers for clients to exchange metadata to coordinate communication (this is called signaling) and To cope with network address translators (NATs) and firewalls.
+## Available Scripts
 
-Signaling is the process of coordinating communication. In order for a WebRTC application to set up a 'call', its clients need to exchange information:
+In the project directory, you can run:
 
-Session control messages used to open or close communication.
-Error messages.
-Media metadata such as codecs and codec settings, bandwidth and media types.
-Key data, used to establish secure connections.
-Network data, such as a host's IP address and port as seen by the outside world.
+### `npm start`
 
-But sometimes this would not be sufficient because there are possibilities where some users might face connectivity issues because of different IP networks where Firewalls and NATs (Network Address Translators) could include specific network policies that will not allow RTC communications.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-In order to solve this kind of network connection scenario, we need to use ICE (Interactive Connectivity Establishment) protocol and it defines a systematic way of finding possible communication options between a peer and the Video Gateway (WebRTC).
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-ICE (INTERACTIVE CONNECTIVITY ESTABLISHMENT) is a protocol used to generate media traversal candidates that can be used in WebRTC applications, and it can be successfully sent and received through Network Address Translation (NAT)s using STUN and TURN.
+### `npm test`
 
-STUN (Session Traversal Utilities for NAT) that complements ICE through NATs using UDP protocol. STUN allows applications to discover the presence and types of NATs and firewalls between them and on the public Internet. It can be used by any device to determine the IP address and port allocated to it by a NAT.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Typically A STUN client can send messages to the STUN server to get the Public IP and ports information then STUN server retrieve that information. Using this Public IP and Port information clients will make a peer to peer communication through the internet.
+### `npm run build`
 
-TURN (Traversal Using Relays around NAT) is a protocol that assists in the traversal of network address translators (NAT) or firewalls for webRTC applications. TURN Server allows clients to send and receive data through an intermediary server. The TURN protocol is the extension to STUN.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-In a few cases, client communication endpoints are stuck behind different types of NATs, or when a symmetric NAT is in use, it may be easier to send media through a relay server and its called the TURN server.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Typically A TURN client first sends a message to a TURN server to allocate an IP address and port on the TURN server. Once the allocation has succeeded, the client will use the IP address and port number to communicate with peers. The TURN packet contains the destination address of the peer, then converts these packets as the UDP protocol packet and sends this to the peer.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-TURN is most useful for Web, Mobile and IoT clients on networks masqueraded by symmetric NAT devices. But the TURN server cost is high because of the server utilization and huge bandwidth usage in the case where more client connections are established.
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-WebSockets -
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-The WebSocket specification defines an API establishing "socket" connections between a web browser/client and a server.
-video communication through a web socket has higher latencies than WebRTC.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Features - 
-Group Meeting
-Recording
-Video download option
-Share screen
-Audio and video mute and unmute
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
