@@ -16,10 +16,11 @@ function Game(props) {
     const [dot, setDot] = useState([[0, 0], [2, 0]]);
     const [food, setFood] = useState(getRandomNumber());
     const [direct, setDirec] = useState('RIGHT');
-    const [speed, setSpeed] = useState(1000)
+    const [speed, setSpeed] = useState(1000);
+    
     useEffect(() => {
         setInterval(moveSnake, speed);
-   })
+    })
     useEffect(() => {
     //    setInterval(moveSnake, speed);
         document.addEventListener('keydown', function (event) {
