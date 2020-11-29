@@ -4,6 +4,10 @@
   }
 
 .background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height:  100vh ;
     background: linear-gradient(to bottom, rgba(232, 232, 232, 1.0),  rgba(34, 41, 50, 0.7));
 }
@@ -11,4 +15,24 @@
 .metal-font{
     font-family: thisSpecialFont!important;
     /* font-size: 10px; */
+}
+
+.custom-button{
+    margin-bottom: 10px;
+    width: 50%;
+}
+h1 span {
+    color: #F05454;
+}
+p span {
+    color: #F05454;
+}
+
+.custom-button span{
+    color: #F05454;
+}
+
+.home-container{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
