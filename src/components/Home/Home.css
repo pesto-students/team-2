@@ -12,6 +12,14 @@
     background: linear-gradient(to bottom, rgba(232, 232, 232, 1.0),  rgba(65, 73, 83, 0.7));
 }
 
+.modal .modal-content {
+    background: linear-gradient(to bottom, rgba(232, 232, 232, 1.0),  rgba(65, 73, 83, 0.7));
+}
+
+.snake {
+    height: 400px;
+}
+
 .metal-font{
     font-family: thisSpecialFont!important;
     /* font-size: 10px; */
@@ -33,6 +41,6 @@ p span {
 }
 
 .home-container{
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 100px;
 }

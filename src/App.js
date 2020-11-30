@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
 
 import Game from './components/Game/Game';
 import Home from './components/Home/Home';
 function App() {
   return (
     <div className="App">
-      <Home></Home>
+      <Router>
+        <Switch>
+          <Route exact path='/'  component = {Home}/>
+          <Route path='/game' component = {Game}/>
+        </Switch>
+      </Router>
     </div>
   );
 }
