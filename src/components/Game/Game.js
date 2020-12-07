@@ -5,6 +5,7 @@ import Snake from '../Snake/Snake.js';
 import Food from '../Food/Food.js';
 import liveImage from '../../assets/images/crotalus.png'
 import { Container, Row, Col } from 'react-bootstrap';
+import { render } from '@testing-library/react';
 const getRandomNumber = () => {
   let min = 1;
   let max = 98;
@@ -21,17 +22,16 @@ function Game(props) {
 
 
   useEffect(() => {
-      setInterval(moveSnake, speed);
- })
-  useEffect(() => {
   //    setInterval(moveSnake, speed);
       document.addEventListener('keydown', function (event) {
           onKeyDown(event) 
-      })
+      },[])
 
   });
  
   
+   
+ 
 
   const onKeyDown = (e) => {
       console.log(e.key);
@@ -75,6 +75,10 @@ function Game(props) {
       await setDot(dots)
   }
 
+  useEffect(() => {
+    const intervalId =  setInterval(moveSnake, speed);
+    return () => clearInterval(intervalId); 
+ }, [moveSnake, useState])
   return (
     <div className="background metal-font">
       <Container fluid>
