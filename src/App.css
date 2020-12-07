@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+@font-face {
+  font-family: thisSpecialFont;
+  src: url('./assets/font/METAG___.TTF');
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

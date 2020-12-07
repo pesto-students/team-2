@@ -6,6 +6,7 @@ import snake from '../../assets/images/bigSnek.png';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 
+
 function Home(props) {
 
     let history = useHistory();
