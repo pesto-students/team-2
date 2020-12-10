@@ -20,19 +20,15 @@ function Game(props) {
   const [direct, setDirec] = useState('RIGHT');
   const [speed, setSpeed] = useState(1000)
 
-
   useEffect(() => {
   //    setInterval(moveSnake, speed);
       document.addEventListener('keydown', function (event) {
-          onKeyDown(event) 
+        event.preventDefault();
+        onKeyDown(event) 
       },[])
 
   });
  
-  
-   
- 
-
   const onKeyDown = (e) => {
       console.log(e.key);
       switch (e.key) {
@@ -89,17 +85,17 @@ function Game(props) {
             </div>
             <br /><br /><br />
             <div className="score-tag">
-              HIGH SCORE<span className="sub-name "> &nbsp;166</span>
+              HIGH SCORE <span className="sub-name "> 166</span>
             </div>
             <br />
             <div className="score-tag">
-              SCORE<span className="sub-name "> &nbsp;15</span>
+              SCORE <span className="sub-name "> 15</span>
             </div> 
             <br />
             <div className="score-tag">
               LIVES <br />
 
-              <img className="livesnake" src={liveImage} /> <span className="sub-name " >X 3</span>
+              <img className="livesnake" alt='lives' src={liveImage} /> <span className="sub-name " >X 3</span>
             </div>
           </Col>
           <Col lg={10}  xs={12}>

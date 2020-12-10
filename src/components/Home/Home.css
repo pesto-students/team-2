@@ -37,6 +37,13 @@ p span {
     color: #F05454;
 }
 
+.formInput{
+    padding : 5px;
+    border-radius: 3px;
+    width: 90%;
+    border : none;
+}
+
 .home-container{
     margin-top: 150px;
     margin-bottom: 100px;
