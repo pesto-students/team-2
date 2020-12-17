@@ -185,11 +185,11 @@ function Game(props) {
           </Col>
         </Row>
       </Container>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="metal-font">
         <Modal.Header >
-          <Modal.Title>Game over</Modal.Title>
+          <Modal.Title className="name-tag">GAME OVE<span  className="sub-name">R</span></Modal.Title>
         </Modal.Header>
-        <Modal.Body>Your score is - {score}</Modal.Body>
+        <Modal.Body className="name-tag">YOUR SCORE IS -<span  className="sub-name numeric-font" style={{fontSize:"50px"}}>{score}</span> </Modal.Body>
         <Modal.Footer>
           {/* <Button variant="secondary" onClick={handleClose}>
             Close
