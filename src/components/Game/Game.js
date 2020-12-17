@@ -194,7 +194,7 @@ function Game(props) {
           {/* <Button variant="secondary" onClick={handleClose}>
             Close
           </Button> */}
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="danger" onClick={handleClose}>
             Play Again
           </Button>
         </Modal.Footer>
