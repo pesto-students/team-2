@@ -4,3 +4,4 @@ Proposed design link : https://www.figma.com/file/ZhANlaJwhuIUC1DqsLUHHw/Solid-S
 
 Tech Stack : Frontend - React JS, Backend - Node JS
 
+link : https://solid-snake-game.netlify.app/
