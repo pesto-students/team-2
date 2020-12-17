@@ -4,7 +4,7 @@ import './Game.css'
 import Snake from '../Snake/Snake.js';
 import Food from '../Food/Food.js';
 import liveImage from '../../assets/images/crotalus.png'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 // import { render } from '@testing-library/react';
 const getRandomNumber = () => {
   let min = 1;
@@ -21,6 +21,8 @@ function Game(props) {
   const [speed, setSpeed] = useState(300)
   const [score, setScore] = useState(0)
   const [highScore, setHighScore] = useState(localStorage.getItem('highScore') === null ? 0 : localStorage.getItem('highScore'));
+  const [show, setShow] = useState(false);
+
   // const [life, setLife] = useState(3)
 
   useEffect(() => {
@@ -30,9 +32,16 @@ function Game(props) {
     }, [])
 
   });
-  useEffect(() => {
-    console.log('rlsjg;krjgtk;jdtk;ghk;ldtjfg', localStorage.getItem('highScore'))
-  })
+  const handleClose = () => {
+    setShow(false);
+    setDot([[0, 0], [2, 0]]);
+    setFood(getRandomNumber());
+    setDirec('RIGHT');
+    setSpeed(300)
+    setScore(0)
+
+  }
+  const handleShow = () => setShow(true);
   const onKeyDown = (e) => {
     console.log(e.key);
     switch (e.key) {
@@ -81,12 +90,11 @@ function Game(props) {
   }
   const gameOver = () => {
     console.log(`Game Over,Snake length is ${dot.length}`)
-    setDot([[0, 0], [2, 0]]);
-    setFood(getRandomNumber());
-    setDirec('RIGHT');
-    setSpeed(500)
-    setScore(0)
+
+    setSpeed(0)
+
     updateHighScore()
+    handleShow();
   }
   const checkIfOutOfCollapsed = () => {
     let snake = [...dot];
@@ -105,9 +113,9 @@ function Game(props) {
     if (head[0] == snakeFood[0] && head[1] == snakeFood[1]) {
       setFood(getRandomNumber())
       enlargeSnake();
-      increaseSpeed();
+      // increaseSpeed();
       updateScore()
-      
+
 
     }
   }
@@ -123,11 +131,11 @@ function Game(props) {
   }
 
   const increaseSpeed = () => {
-    console.log('speed',speed)
+
     if (score % 2 == 0 && score != 0) {
-      let newSpeed = (speed - (score*20));
+      let newSpeed = (speed - (score * 20));
       setSpeed(newSpeed);
-      console.log('newSpeed',newSpeed)
+      console.log('newSpeed', newSpeed)
     }
   }
   const enlargeSnake = () => {
@@ -177,7 +185,20 @@ function Game(props) {
           </Col>
         </Row>
       </Container>
-
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header >
+          <Modal.Title>Game over</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your score is - {score}</Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button> */}
+          <Button variant="primary" onClick={handleClose}>
+            Play Again
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
