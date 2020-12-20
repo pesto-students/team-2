@@ -15,7 +15,7 @@ const getRandomNumber = () => {
 }
 function Game(props) {
 
-  const [dot, setDot] = useState([[0, 0], [2, 0]]);
+  const [dot, setDot] = useState([[0, 0], [2, 0],[4, 0]]);
   const [food, setFood] = useState(getRandomNumber());
   const [direct, setDirec] = useState('RIGHT');
   const [speed, setSpeed] = useState(300)
@@ -34,7 +34,7 @@ function Game(props) {
   });
   const handleClose = () => {
     setShow(false);
-    setDot([[0, 0], [2, 0]]);
+    setDot([[0, 0], [2, 0], [4, 0]]);
     setFood(getRandomNumber());
     setDirec('RIGHT');
     setSpeed(300)
@@ -189,7 +189,7 @@ function Game(props) {
         <Modal.Header >
           <Modal.Title className="name-tag">GAME OVE<span  className="sub-name">R</span></Modal.Title>
         </Modal.Header>
-        <Modal.Body className="name-tag">YOUR SCORE IS -<span  className="sub-name numeric-font" style={{fontSize:"50px"}}>{score}</span> </Modal.Body>
+        <Modal.Body className="name-tag">YOUR SCORE IS <span  className="sub-name numeric-font" style={{fontSize:"50px"}}><i>{score}</i> </span> </Modal.Body>
         <Modal.Footer>
           {/* <Button variant="secondary" onClick={handleClose}>
             Close
