@@ -11,16 +11,16 @@
     min-height: calc(100vh - 89px);
     margin: 50px auto;
     position: relative;
+    box-shadow: 1px -2px 18px -2px rgba(101,85,85,0.74);
+}
+.game-area2{
+    width: 100%;
+    border: 5px groove black;
+    min-height: calc(100vh - 89px);
+    position: relative;
+    box-shadow: 1px 5px 18px -2px rgb(28 28 28 / 84%);
 }
 
-
-    .snake-dot{
-     position: absolute;   
-     width: 2%;
-     height: 2%;
-     background-color:black;
-     border: 2px solid #ffffff;
-    }
 
     .background{
         position: absolute;
@@ -43,8 +43,13 @@
     .name-tag{
         text-align: center;
         font-size: 24px !important;
-
     }
+    .name-tag2{
+    padding: 10px;
+    text-align: center;
+    font-size: 35px !important;
+    }
+   
     .sub-name{
         color:#F05454;
     }
