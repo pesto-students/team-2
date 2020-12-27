@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Snake.css'
 function Snake(props) {
     return (
         <div >

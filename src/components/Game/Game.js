@@ -15,7 +15,7 @@ const getRandomNumber = () => {
 }
 function Game(props) {
 
-  const [dot, setDot] = useState([[0, 0], [2, 0],[4, 0]]);
+  const [dot, setDot] = useState([[0, 0], [2, 0], [4, 0]]);
   const [food, setFood] = useState(getRandomNumber());
   const [direct, setDirec] = useState('RIGHT');
   const [speed, setSpeed] = useState(300)
@@ -90,9 +90,7 @@ function Game(props) {
   }
   const gameOver = () => {
     console.log(`Game Over,Snake length is ${dot.length}`)
-
     setSpeed(0)
-
     updateHighScore()
     handleShow();
   }
@@ -151,12 +149,12 @@ function Game(props) {
   useEffect(() => {
     checkIfOutOfBorder();
     checkIfOutOfCollapsed();
-    checkIfEat();
+    checkIfEat(); 
   })
   return (
     <div className="background metal-font">
       <Container fluid>
-        <Row>
+        {/* <Row>
           <Col lg={2} xs={0} className="score-section">
             <div className="name-tag">
               SOLID SNAK<span className="sub-name">E</span>
@@ -170,15 +168,47 @@ function Game(props) {
               SCORE <span className="sub-name numeric-font"> {score}</span>
             </div>
             <br />
-            {/* <div className="score-tag">
-              LIVES <br />
-
-              <img className="livesnake" alt='lives' src={liveImage} /> <span className="sub-name " >X 3</span>
-            </div> */}
-          </Col>
+            </Col>
+            
+          
           <Col lg={10} xs={12}>
 
             <div className="game-area">
+              <Snake dot={dot} setDot={setDot}></Snake>
+              <Food food={food} setFood={setFood}></Food>
+            </div>
+          </Col>
+        </Row> */}
+         <Row>
+          <Col lg={12} xs={0} className="">
+            <Row>
+            <Col lg={4} xs={0} className=""></Col>
+            <Col lg={4} xs={0} className="">
+            <div className="name-tag2">
+              SOLID SNAK<span className="sub-name">E</span>
+            </div>
+            </Col>
+            <Col lg={4} xs={0} className="">
+            <span className="score-tag">
+              HIGH SCORE <span className="sub-name  numeric-font"> {highScore}</span>
+            </span>
+             <br></br>
+             <span className="score-tag">
+              SCORE <span className="sub-name numeric-font"> {score}</span>
+            </span>
+            </Col>
+            
+            </Row>
+            
+             
+           
+           
+            </Col>
+            
+          
+          <Col lg={12} xs={12}>
+
+            <div className="game-area2">
               <Snake dot={dot} setDot={setDot}></Snake>
               <Food food={food} setFood={setFood}></Food>
             </div>
@@ -187,9 +217,9 @@ function Game(props) {
       </Container>
       <Modal show={show} onHide={handleClose} className="metal-font">
         <Modal.Header >
-          <Modal.Title className="name-tag">GAME OVE<span  className="sub-name">R</span></Modal.Title>
+          <Modal.Title className="name-tag">GAME OVE<span className="sub-name">R</span></Modal.Title>
         </Modal.Header>
-        <Modal.Body className="name-tag">YOUR SCORE IS <span  className="sub-name numeric-font" style={{fontSize:"50px"}}><i>{score}</i> </span> </Modal.Body>
+        <Modal.Body className="name-tag">YOUR SCORE IS <span className="sub-name numeric-font" style={{ fontSize: "50px" }}><i>{score}</i> </span> </Modal.Body>
         <Modal.Footer>
           {/* <Button variant="secondary" onClick={handleClose}>
             Close
